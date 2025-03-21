@@ -2,10 +2,113 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Farrar Analytics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Period Comparison</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .header {
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+        .icon {
+            font-size: 20px;
+            color: #007bff;
+        }
+        .metric {
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+            padding: 5px 0;
+        }
+        .conversion-rate {
+            margin-top: 15px;
+            background: #e7f1ff;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Farrar Analytics!</h1>
-    <p>This is a test page for GitHub Pages.</p>
+
+    <h2>🔵 Time Period Comparison</h2>
+    <div class="container">
+        <div class="card">
+            <div class="header"><span class="icon">⏳</span> 3 Day Averages</div>
+            <div class="metric"><span>💲 Spend</span> <span id="spend3">$133.25</span></div>
+            <div class="metric"><span>🧑‍🤝‍🧑 Leads</span> <span id="leads3">5.23</span></div>
+            <div class="metric"><span>💲 CPL</span> <span id="cpl3">$25.46</span></div>
+            <div class="metric"><span>🛒 Prepays</span> <span id="prepays3">1.73</span></div>
+            <div class="metric"><span>💰 Cash</span> <span id="cash3">$133.87</span></div>
+            <div class="metric"><span>💵 CPP</span> <span id="cpp3">$76.88</span></div>
+            <div class="conversion-rate">ℹ️ Conv. Rate: <span id="conv3">33.12%</span></div>
+        </div>
+
+        <div class="card">
+            <div class="header"><span class="icon">⏳</span> 7 Day Averages</div>
+            <div class="metric"><span>💲 Spend</span> <span id="spend7">$315.60</span></div>
+            <div class="metric"><span>🧑‍🤝‍🧑 Leads</span> <span id="leads7">12.56</span></div>
+            <div class="metric"><span>💲 CPL</span> <span id="cpl7">$25.14</span></div>
+            <div class="metric"><span>🛒 Prepays</span> <span id="prepays7">4.00</span></div>
+            <div class="metric"><span>💰 Cash</span> <span id="cash7">$309.24</span></div>
+            <div class="metric"><span>💵 CPP</span> <span id="cpp7">$78.90</span></div>
+            <div class="conversion-rate">ℹ️ Conv. Rate: <span id="conv7">31.86%</span></div>
+        </div>
+
+        <div class="card">
+            <div class="header"><span class="icon">⏳</span> 30 Day Averages</div>
+            <div class="metric"><span>💲 Spend</span> <span id="spend30">$1,438.42</span></div>
+            <div class="metric"><span>🧑‍🤝‍🧑 Leads</span> <span id="leads30">57.26</span></div>
+            <div class="metric"><span>💲 CPL</span> <span id="cpl30">$25.12</span></div>
+            <div class="metric"><span>🛒 Prepays</span> <span id="prepays30">17.59</span></div>
+            <div class="metric"><span>💰 Cash</span> <span id="cash30">$1,369.99</span></div>
+            <div class="metric"><span>💵 CPP</span> <span id="cpp30">$81.78</span></div>
+            <div class="conversion-rate">ℹ️ Conv. Rate: <span id="conv30">30.72%</span></div>
+        </div>
+    </div>
+
+    <script>
+        // Example: Updating values dynamically (Replace this with Looker Studio API calls if needed)
+        function updateMetrics() {
+            document.getElementById("spend3").innerText = "$" + (100 + Math.random() * 50).toFixed(2);
+            document.getElementById("leads3").innerText = (5 + Math.random() * 2).toFixed(2);
+            document.getElementById("conv3").innerText = (30 + Math.random() * 5).toFixed(2) + "%";
+
+            document.getElementById("spend7").innerText = "$" + (300 + Math.random() * 100).toFixed(2);
+            document.getElementById("leads7").innerText = (12 + Math.random() * 3).toFixed(2);
+            document.getElementById("conv7").innerText = (30 + Math.random() * 5).toFixed(2) + "%";
+
+            document.getElementById("spend30").innerText = "$" + (1400 + Math.random() * 200).toFixed(2);
+            document.getElementById("leads30").innerText = (50 + Math.random() * 10).toFixed(2);
+            document.getElementById("conv30").innerText = (30 + Math.random() * 5).toFixed(2) + "%";
+        }
+
+        setInterval(updateMetrics, 5000); // Updates every 5 seconds (Example)
+    </script>
+
 </body>
 </html>
