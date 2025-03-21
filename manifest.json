@@ -1,0 +1,11 @@
+{
+  "name": "custom_time_comparison",
+  "display_name": "Time Period Comparison",
+  "description": "Displays 3, 7, and 30-day KPI comparisons with live data",
+  "script": ["index.js"],
+  "style": ["styles.css"],
+  "data": {
+    "type": "table"
+  },
+  "version": "1"
+}
